@@ -1,0 +1,576 @@
+/* ============================================
+   CHAR'S CONTENT — MOBILE / RESPONSIVE STYLESHEET
+   ------------------------------------------------
+   This file is loaded AFTER styles.css and does not
+   modify any rule in styles.css. It only adds:
+     1. Hamburger menu styles + mobile nav dropdown
+     2. Image-fit fixes for portfolio/featured images
+     3. Responsive layout overrides at 3 breakpoints:
+        - 1024px (tablets / small laptops)
+        - 768px  (phones, landscape tablets)
+        - 480px  (small phones)
+   ============================================ */
+
+/* ============================================
+   IMAGE FIT FIXES (all screen sizes)
+   Keeps portfolio screenshots from overflowing
+   their containers on any device.
+   ============================================ */
+.featured-img {
+  overflow: hidden;
+}
+
+.featured-img img,
+.port-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+}
+
+/* ============================================
+   HAMBURGER MENU BUTTON
+   Hidden by default (desktop). Shown at 768px.
+   ============================================ */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  width: 36px;
+  height: 36px;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  z-index: 200;
+  flex-shrink: 0;
+}
+
+.menu-toggle-bar {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: var(--ink);
+  border-radius: 2px;
+  transition: transform 0.25s ease, opacity 0.2s ease;
+}
+
+.menu-toggle.active .menu-toggle-bar:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.menu-toggle.active .menu-toggle-bar:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-toggle.active .menu-toggle-bar:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+/* ============================================
+   TABLET — 1024px and below
+   ============================================ */
+@media (max-width: 1024px) {
+
+  nav {
+    padding: 1rem 2rem;
+  }
+
+  /* HERO */
+  .hero-left {
+    padding: 4rem 2rem 3rem 2rem;
+  }
+
+  .hero-headline {
+    font-size: 48px;
+  }
+
+  .hero-img-box {
+    width: 320px;
+    height: 360px;
+  }
+
+  /* SERVICES PREVIEW (3 -> 2, last centers via span) */
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .service-card:nth-child(3) {
+    grid-column: span 2;
+  }
+
+  /* PORTFOLIO + PRODUCTS GRIDS (3 -> 2) */
+  .portfolio-grid,
+  .portfolio-full-grid,
+  .products-grid,
+  .pricing-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* WHY / PROCESS GRIDS (4 -> 2) */
+  .why-grid,
+  .process-steps {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem 1.5rem;
+  }
+
+  /* TESTIMONIALS PAGE (3 -> 2, featured spans both) */
+  .testi-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .testi-card.featured {
+    grid-column: span 2;
+  }
+
+  /* STATS STRIP (4 -> 2) */
+  .stats-strip {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2.5rem 1.5rem;
+  }
+
+  /* LARGE HEADLINES */
+  .about-title,
+  .contact-title,
+  .featured-title {
+    font-size: 38px;
+  }
+
+  .section-title,
+  .page-hero-title {
+    font-size: 38px;
+  }
+
+  .cta-title {
+    font-size: 36px;
+  }
+}
+
+/* ============================================
+   MOBILE — 768px and below
+   ============================================ */
+@media (max-width: 768px) {
+
+  body {
+    font-size: 14px;
+  }
+
+  /* ---------- NAVIGATION ---------- */
+  nav {
+    padding: 0.85rem 1.25rem;
+    flex-wrap: wrap;
+    position: relative;
+  }
+
+  .nav-brand {
+    font-size: 16px;
+  }
+
+  .menu-toggle {
+    display: flex;
+  }
+
+  .nav-links {
+    display: none;
+    width: 100%;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    gap: 0;
+    background: var(--white);
+    border-bottom: 1px solid var(--peach);
+    box-shadow: 0 12px 24px rgba(20, 17, 21, 0.08);
+  }
+
+  .nav-links.open {
+    display: flex;
+  }
+
+  .nav-links li {
+    width: 100%;
+  }
+
+  .nav-links a {
+    display: block;
+    padding: 1rem 1.5rem;
+    border-bottom: 1px solid var(--peach);
+    opacity: 0.8;
+  }
+
+  .nav-links a:last-child {
+    border-bottom: none;
+  }
+
+  /* CTA pill inside the mobile dropdown */
+  .nav-links a.nav-cta {
+    display: inline-block;
+    margin: 0.85rem 1.5rem;
+    padding: 0.75rem 1.25rem;
+    border-bottom: none;
+    text-align: center;
+    border-radius: 2px;
+  }
+
+  /* ---------- HERO ---------- */
+  .hero {
+    grid-template-columns: 1fr;
+    min-height: auto;
+  }
+
+  .hero-left {
+    padding: 3rem 1.25rem;
+  }
+
+  .hero-headline {
+    font-size: 38px;
+  }
+
+  .hero-sub {
+    max-width: 100%;
+  }
+
+  .hero-actions {
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .hero-right {
+    padding: 2.5rem 1.25rem;
+  }
+
+  .hero-img-box {
+    width: 100%;
+    max-width: 320px;
+    height: auto;
+    min-height: 280px;
+  }
+
+  .hero-logo-large {
+    width: 100%;
+    height: 100%;
+  }
+
+  .hero-logo-large img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+  }
+
+  .hero-badge {
+    width: 64px;
+    height: 64px;
+    bottom: 1.25rem;
+    right: 1.25rem;
+  }
+
+  .hero-badge span {
+    font-size: 9px;
+  }
+
+  /* ---------- GENERAL SECTIONS ---------- */
+  .section {
+    padding: 3rem 1.25rem;
+  }
+
+  .section-title {
+    font-size: 30px;
+    margin-bottom: 2rem;
+  }
+
+  .page-hero {
+    padding: 3rem 1.25rem 2.5rem;
+  }
+
+  .page-hero-title {
+    font-size: 34px;
+  }
+
+  .page-hero-sub {
+    font-size: 14px;
+  }
+
+  /* ---------- SERVICES PREVIEW (home) ---------- */
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .service-card:nth-child(3) {
+    grid-column: span 1;
+  }
+
+  /* ---------- ABOUT STRIP ---------- */
+  .about-strip {
+    grid-template-columns: 1fr;
+  }
+
+  .about-left {
+    padding: 3rem 1.25rem;
+  }
+
+  .about-title {
+    font-size: 32px;
+  }
+
+  .about-right {
+    padding: 2.5rem 1.25rem;
+  }
+
+  .stat-row {
+    flex-wrap: wrap;
+    gap: 1.5rem 2rem;
+  }
+
+  /* ---------- PORTFOLIO ---------- */
+  .portfolio-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .portfolio-grid,
+  .portfolio-full-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .featured-project {
+    grid-template-columns: 1fr;
+    padding: 3rem 1.25rem;
+    gap: 2rem;
+  }
+
+  .featured-title {
+    font-size: 32px;
+  }
+
+  .featured-img {
+    height: 240px;
+  }
+
+  .filter-bar {
+    padding: 1rem 1.25rem;
+    gap: 0.75rem;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .filter-btn {
+    flex-shrink: 0;
+  }
+
+  /* ---------- TESTIMONIAL STRIP (home) ---------- */
+  .testi-strip {
+    padding: 3rem 1.25rem;
+  }
+
+  .testi-quote {
+    font-size: 20px;
+  }
+
+  /* ---------- TESTIMONIALS PAGE ---------- */
+  .testi-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .testi-card.featured {
+    grid-column: span 1;
+    grid-template-columns: 1fr;
+    text-align: left;
+    gap: 1.5rem;
+    padding: 2rem 1.5rem;
+  }
+
+  .testi-card.featured .testi-text {
+    font-size: 20px;
+  }
+
+  .stats-strip {
+    grid-template-columns: repeat(2, 1fr);
+    padding: 3rem 1.25rem;
+    gap: 2rem 1rem;
+  }
+
+  .stats-num {
+    font-size: 40px;
+  }
+
+  /* ---------- SERVICES PAGE ---------- */
+  .services-full {
+    grid-template-columns: 1fr;
+  }
+
+  .service-block {
+    padding: 2.5rem 1.25rem;
+    border-right: none !important;
+  }
+
+  .service-block-name {
+    font-size: 24px;
+  }
+
+  .pricing-strip {
+    padding: 3rem 1.25rem;
+  }
+
+  .pricing-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .process-steps {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem 1rem;
+  }
+
+  /* ---------- PRODUCTS / SHOP PAGE ---------- */
+  .shop-intro {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 2rem 1.25rem;
+  }
+
+  .products-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .why-strip {
+    padding: 3rem 1.25rem;
+  }
+
+  .why-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem 1rem;
+  }
+
+  /* ---------- CONTACT PAGE ---------- */
+  .contact-layout {
+    grid-template-columns: 1fr;
+    min-height: auto;
+  }
+
+  .contact-left,
+  .contact-right {
+    padding: 3rem 1.25rem;
+  }
+
+  .contact-title {
+    font-size: 36px;
+  }
+
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .form-grid .form-full {
+    grid-column: span 1;
+  }
+
+  .form-title {
+    font-size: 26px;
+  }
+
+  .faq-section {
+    padding: 3rem 1.25rem;
+  }
+
+  .faq-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  /* ---------- CTA STRIPS ---------- */
+  .cta-strip {
+    padding: 3rem 1.25rem;
+  }
+
+  .cta-title {
+    font-size: 30px;
+  }
+
+  /* ---------- FOOTER ---------- */
+  footer {
+    flex-direction: column;
+    text-align: center;
+    padding: 2rem 1.25rem;
+    gap: 1rem;
+  }
+
+  .footer-nav {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  /* ---------- TICKER ---------- */
+  .ticker-item {
+    font-size: 10px;
+  }
+}
+
+/* ============================================
+   SMALL MOBILE — 480px and below
+   ============================================ */
+@media (max-width: 480px) {
+
+  .hero-headline {
+    font-size: 32px;
+  }
+
+  .section-title {
+    font-size: 26px;
+  }
+
+  .page-hero-title {
+    font-size: 28px;
+  }
+
+  .about-title {
+    font-size: 28px;
+  }
+
+  .contact-title {
+    font-size: 28px;
+  }
+
+  .featured-title {
+    font-size: 26px;
+  }
+
+  .cta-title {
+    font-size: 26px;
+  }
+
+  .why-grid,
+  .process-steps,
+  .stats-strip {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.85rem;
+  }
+
+  .hero-actions .btn-primary,
+  .hero-actions .btn-secondary {
+    text-align: center;
+  }
+
+  .btn-primary,
+  .btn-teal {
+    width: 100%;
+    text-align: center;
+  }
+
+  .testi-card.featured .testi-text {
+    font-size: 17px;
+  }
+
+  .pricing-price {
+    font-size: 42px;
+  }
+}

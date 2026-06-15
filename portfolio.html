@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio | Char's Content</title>
+    <meta
+      name="description"
+      content="Browse Char's Content portfolio of web design, branding, and digital product projects."
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="mobile.css" />
+  </head>
+  <body>
+    <!-- NAV -->
+    <nav>
+      <a href="index.html" class="nav-logo">
+        <div class="logo-circle">
+          <img
+            src="images/cc-black-logo-transparent.png"
+            alt="Chars Content Logo"
+          />
+        </div>
+        <span class="nav-brand">Char's Content</span>
+      </a>
+      <button class="menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+        <span class="menu-toggle-bar"></span>
+        <span class="menu-toggle-bar"></span>
+        <span class="menu-toggle-bar"></span>
+      </button>
+      <ul class="nav-links">
+        <li><a href="services.html">Services</a></li>
+        <li><a href="portfolio.html" class="active">Portfolio</a></li>
+        <li><a href="testimonials.html">Testimonials</a></li>
+        <li><a href="products.html">Digital Products</a></li>
+        <li><a href="contact.html" class="nav-cta">Let's Work Together</a></li>
+      </ul>
+    </nav>
+
+    <!-- PAGE HERO -->
+    <section class="page-hero">
+      <p class="section-label">My Work</p>
+      <h1 class="page-hero-title">Projects I'm<br /><em>proud of</em></h1>
+      <p class="page-hero-sub">
+        A curated look at websites, brands, and digital products I've designed
+        for clients and my own creative ventures.
+      </p>
+    </section>
+
+    <!-- FILTER BAR -->
+    <div class="filter-bar">
+      <button class="filter-btn active">All</button>
+      <button class="filter-btn">Web Design</button>
+      <button class="filter-btn">Branding</button>
+      <button class="filter-btn">Digital Products</button>
+    </div>
+
+    <!-- FEATURED PROJECT -->
+    <div class="featured-project">
+      <div>
+        <p class="featured-label">Featured Project</p>
+        <h2 class="featured-title">Fairy Law Mother</h2>
+        <p class="featured-desc">
+          A complete brand identity package including logo design, color
+          palette, typography system, and a 8-page Squarespace website.
+        </p>
+        <a href="contact.html" class="btn-primary">Start Your Project</a>
+      </div>
+      <div class="featured-img">
+        <img src="images/FLM.png" alt="" />
+      </div>
+    </div>
+
+    <!-- PORTFOLIO GRID -->
+    <section class="section portfolio-section">
+      <p class="section-label">All Projects</p>
+      <h2 class="section-title">Recent <em>work</em></h2>
+      <div class="portfolio-full-grid">
+        <div class="port-card">
+          <div class="port-img port-img-teal">
+            <img src="images/Brand-Board-FLM.png" alt="" />
+            <!-- <span class="port-img-label">Branding</span> -->
+          </div>
+          <div class="port-info">
+            <p class="port-tag">Branding &amp; Logo</p>
+            <p class="port-title">Fairy Law Mother</p>
+            <p class="port-desc">
+              Full brand identity including logo, color palette, and brand
+              guide.
+            </p>
+          </div>
+        </div>
+        <div class="port-card" id="website-design">
+          <div class="port-img port-img-peach">
+            <img src="images/FLM Workshops.png" alt="FLM Workshop Snapshot" />
+            <!-- <span class="port-img-label">Web Design</span> -->
+          </div>
+          <div class="port-info">
+            <p class="port-tag">Web Design</p>
+            <p class="port-title">
+              <a
+                href="https://www.fairy-law-mother.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                >Fairy Law Mother</a
+              >
+            </p>
+            <p class="port-desc">
+              8-page Squarespace site for a small business owner.
+            </p>
+          </div>
+        </div>
+        <div class="port-card">
+          <div class="port-img port-img-blush">
+            <img src="images/ECommerce-365-2.png" alt="" />
+            <!-- <span class="port-img-label">E-Commerce Store</span> -->
+          </div>
+          <div class="port-info" id="e-commerce">
+            <p class="port-tag">E-Commerce</p>
+            <p class="port-title">
+              <a
+                href="http://emuse365.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                >Emusé 365</a
+              >
+            </p>
+            <p class="port-desc">E-Commerce store created using Wordpress.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-strip">
+      <h2 class="cta-title">Like what you <em>see?</em></h2>
+      <p class="cta-sub">
+        Let's create something just as beautiful for your brand.
+      </p>
+      <a href="contact.html" class="btn-teal">Start a Project</a>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+      <a href="index.html" class="footer-brand">Char's Content</a>
+      <nav class="footer-nav">
+        <a href="services.html">Services</a>
+        <a href="portfolio.html">Portfolio</a>
+        <a href="products.html">Shop</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <span class="footer-copy"
+        >© 2025 Char's Content LLC. All rights reserved.</span
+      >
+    </footer>
+
+    <script>
+      // Filter button interaction
+      document.querySelectorAll(".filter-btn").forEach((btn) => {
+        btn.addEventListener("click", () => {
+          document
+            .querySelectorAll(".filter-btn")
+            .forEach((b) => b.classList.remove("active"));
+          btn.classList.add("active");
+        });
+      });
+    </script>
+    <script src="mobile.js" defer></script>
+  </body>
+</html>

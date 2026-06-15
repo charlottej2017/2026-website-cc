@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact | Char's Content</title>
+    <meta
+      name="description"
+      content="Get in touch with Char's Content to start your web design or branding project."
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="mobile.css" />
+  </head>
+  <body>
+    <!-- NAV -->
+    <nav>
+      <a href="index.html" class="nav-logo">
+        <div class="logo-circle"></div>
+        <span class="nav-brand">Char's Content</span>
+      </a>
+      <button class="menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+        <span class="menu-toggle-bar"></span>
+        <span class="menu-toggle-bar"></span>
+        <span class="menu-toggle-bar"></span>
+      </button>
+      <ul class="nav-links">
+        <li><a href="services.html">Services</a></li>
+        <li><a href="portfolio.html">Portfolio</a></li>
+        <li><a href="testimonials.html">Testimonials</a></li>
+        <li><a href="products.html">Digital Products</a></li>
+        <li>
+          <a
+            href="contact.html"
+            class="nav-cta active"
+            style="background: var(--teal); color: var(--ink) !important"
+            >Let's Work Together</a
+          >
+        </li>
+      </ul>
+    </nav>
+
+    <!-- PAGE HERO -->
+    <section class="page-hero">
+      <p class="section-label">Get In Touch</p>
+      <h1 class="page-hero-title">
+        Let's build<br />something <em>together</em>
+      </h1>
+      <p class="page-hero-sub">
+        Ready to elevate your brand? I'd love to hear about your project. Fill
+        out the form and I'll be in touch within 1–2 business days.
+      </p>
+    </section>
+
+    <!-- CONTACT LAYOUT -->
+    <div class="contact-layout">
+      <!-- LEFT: Info -->
+      <div class="contact-left">
+        <p class="section-label contact-label">Contact Info</p>
+        <h2 class="contact-title">
+          Let's make<br />something<br /><em>beautiful.</em>
+        </h2>
+        <p class="contact-body">
+          Whether you're starting from scratch or refreshing what you have, I'm
+          here to bring your vision to life.
+        </p>
+
+        <div class="contact-info">
+          <div class="contact-info-item">
+            <div class="contact-info-icon">✉</div>
+            <div>
+              <p class="contact-info-label">Email</p>
+              <a href="mailto:hello@charscontent.com" class="contact-info-value"
+                >hello@charscontent.com</a
+              >
+            </div>
+          </div>
+          <div class="contact-info-item">
+            <div class="contact-info-icon">🌐</div>
+            <div>
+              <p class="contact-info-label">Website</p>
+              <a href="https://charscontent.com" class="contact-info-value"
+                >charscontent.com</a
+              >
+            </div>
+          </div>
+          <div class="contact-info-item">
+            <div class="contact-info-icon">🕐</div>
+            <div>
+              <p class="contact-info-label">Response Time</p>
+              <span class="contact-info-value">1–2 Business Days</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="contact-socials">
+          <a href="#" class="social-link">ig</a>
+          <a href="#" class="social-link">tw</a>
+          <a href="#" class="social-link">in</a>
+          <a href="#" class="social-link">et</a>
+        </div>
+      </div>
+
+      <!-- RIGHT: Form -->
+      <div class="contact-right">
+        <h2 class="form-title">Tell me about your project</h2>
+        <p class="form-subtitle">
+          The more detail, the better. I'll review your submission and reach out
+          to schedule a discovery call.
+        </p>
+
+        <form onsubmit="handleSubmit(event)">
+          <div class="form-grid">
+            <div class="form-field">
+              <label class="form-label">First Name</label>
+              <input
+                class="form-input"
+                type="text"
+                placeholder="Charlotte"
+                required
+              />
+            </div>
+            <div class="form-field">
+              <label class="form-label">Last Name</label>
+              <input
+                class="form-input"
+                type="text"
+                placeholder="Smith"
+                required
+              />
+            </div>
+            <div class="form-field">
+              <label class="form-label">Email Address</label>
+              <input
+                class="form-input"
+                type="email"
+                placeholder="hello@yourbrand.com"
+                required
+              />
+            </div>
+            <div class="form-field">
+              <label class="form-label">Business Name</label>
+              <input
+                class="form-input"
+                type="text"
+                placeholder="Your Brand Co."
+              />
+            </div>
+            <div class="form-field form-full">
+              <label class="form-label">Service Needed</label>
+              <select class="service-select">
+                <option value="" disabled selected>Select a service...</option>
+                <option>Website Design</option>
+                <option>Brand Identity</option>
+                <option>Website + Brand Bundle</option>
+                <option>Website Refresh</option>
+                <option>Digital Product Design</option>
+                <option>Canva Templates</option>
+                <option>Not Sure Yet</option>
+              </select>
+            </div>
+            <div class="form-field form-full">
+              <label class="form-label">Budget Range</label>
+              <div class="budget-options">
+                <button
+                  type="button"
+                  class="budget-chip"
+                  onclick="selectBudget(this)"
+                >
+                  Under $300
+                </button>
+                <button
+                  type="button"
+                  class="budget-chip"
+                  onclick="selectBudget(this)"
+                >
+                  $300–$750
+                </button>
+                <button
+                  type="button"
+                  class="budget-chip"
+                  onclick="selectBudget(this)"
+                >
+                  $750–$1,200
+                </button>
+                <button
+                  type="button"
+                  class="budget-chip"
+                  onclick="selectBudget(this)"
+                >
+                  $1,200+
+                </button>
+              </div>
+            </div>
+            <div class="form-field form-full">
+              <label class="form-label">Tell Me About Your Project</label>
+              <textarea
+                class="form-input"
+                placeholder="Share your vision, goals, timeline, or anything else I should know..."
+                style="min-height: 140px"
+              ></textarea>
+            </div>
+          </div>
+          <div class="form-submit-row" style="margin-top: 1.5rem">
+            <button type="submit" class="btn-primary">Send Message →</button>
+            <span class="form-note"
+              >I typically respond within 1–2 business days.</span
+            >
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- FAQ -->
+    <section class="faq-section">
+      <p class="section-label">FAQs</p>
+      <h2 class="section-title">Common <em>questions</em></h2>
+      <div class="faq-grid">
+        <div class="faq-item">
+          <p class="faq-q">How long does a project take?</p>
+          <p class="faq-a">
+            Most website projects are completed in 1–3 weeks depending on the
+            scope. Brand identity packages typically take 1–2 weeks. Timelines
+            are confirmed after our discovery call.
+          </p>
+        </div>
+        <div class="faq-item">
+          <p class="faq-q">Do you require a deposit?</p>
+          <p class="faq-a">
+            Yes, a 50% deposit is required to secure your project spot. The
+            remaining balance is due upon completion before files are delivered.
+          </p>
+        </div>
+        <div class="faq-item">
+          <p class="faq-q">What platforms do you work with?</p>
+          <p class="faq-a">
+            I primarily work with Squarespace, Wix, WordPress, and Canva. If
+            you're on a different platform, reach out and we can discuss
+            options.
+          </p>
+        </div>
+        <div class="faq-item">
+          <p class="faq-q">How many revisions are included?</p>
+          <p class="faq-a">
+            Each service package includes a set number of revision rounds,
+            outlined in your project proposal. Additional revisions are
+            available at an hourly rate.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+      <a href="index.html" class="footer-brand">Char's Content</a>
+      <nav class="footer-nav">
+        <a href="services.html">Services</a>
+        <a href="portfolio.html">Portfolio</a>
+        <a href="products.html">Shop</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <span class="footer-copy"
+        >© 2025 Char's Content LLC. All rights reserved.</span
+      >
+    </footer>
+
+    <script>
+      function selectBudget(el) {
+        document
+          .querySelectorAll(".budget-chip")
+          .forEach((c) => c.classList.remove("selected"));
+        el.classList.add("selected");
+      }
+
+      function handleSubmit(e) {
+        e.preventDefault();
+        const btn = e.target.querySelector('button[type="submit"]');
+        btn.textContent = "Sent! ✓";
+        btn.style.background = "var(--teal)";
+        btn.style.color = "var(--ink)";
+        btn.disabled = true;
+      }
+    </script>
+    <script src="mobile.js" defer></script>
+  </body>
+</html>

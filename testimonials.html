@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Testimonials | Char's Content</title>
+    <meta
+      name="description"
+      content="See what clients are saying about working with Char's Content on web design and branding projects."
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="mobile.css" />
+    <style>
+      .testi-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.5rem;
+        margin-top: 3rem;
+      }
+
+      .testi-card {
+        background: var(--white);
+        border-radius: 4px;
+        padding: 2.5rem 2rem;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .testi-quote-mark {
+        font-family: var(--font-display);
+        font-size: 72px;
+        line-height: 0.6;
+        color: var(--teal);
+        margin-bottom: 1.25rem;
+        display: block;
+      }
+
+      .testi-text {
+        font-family: var(--font-display);
+        font-size: 17px;
+        font-style: italic;
+        color: var(--ink);
+        line-height: 1.75;
+        flex: 1;
+        margin-bottom: 1.5rem;
+      }
+
+      .testi-footer {
+        border-top: 1px solid var(--peach);
+        padding-top: 1rem;
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+      }
+
+      .testi-avatar {
+        width: 38px;
+        height: 38px;
+        border-radius: 50%;
+        background: var(--peach);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: var(--font-display);
+        font-size: 16px;
+        color: var(--ink);
+        flex-shrink: 0;
+      }
+
+      .testi-author-name {
+        font-size: 12px;
+        font-weight: 500;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: var(--ink);
+      }
+
+      .testi-author-role {
+        font-size: 11px;
+        font-weight: 300;
+        color: var(--ink);
+        opacity: 0.5;
+      }
+
+      .testi-stars {
+        color: var(--teal-dark);
+        font-size: 13px;
+        letter-spacing: 2px;
+        margin-bottom: 0.75rem;
+      }
+
+      .testi-card.featured {
+        background: var(--forest);
+        grid-column: span 3;
+        display: grid;
+        grid-template-columns: auto 1fr;
+        gap: 3rem;
+        align-items: center;
+      }
+
+      .testi-card.featured .testi-quote-mark {
+        color: var(--teal);
+      }
+      .testi-card.featured .testi-text {
+        font-size: 26px;
+        color: var(--white);
+      }
+      .testi-card.featured .testi-author-name {
+        color: var(--peach);
+      }
+      .testi-card.featured .testi-author-role {
+        color: var(--white);
+      }
+      .testi-card.featured .testi-footer {
+        border-color: rgba(255, 255, 255, 0.15);
+      }
+      .testi-card.featured .testi-avatar {
+        background: var(--teal);
+        color: var(--ink);
+      }
+      .testi-card.featured .testi-stars {
+        color: var(--teal);
+      }
+
+      .stats-strip {
+        background: var(--peach);
+        padding: 4rem 3rem;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 2rem;
+        text-align: center;
+      }
+
+      .stats-num {
+        font-family: var(--font-display);
+        font-size: 56px;
+        font-weight: 400;
+        color: var(--forest);
+        line-height: 1;
+        margin-bottom: 0.5rem;
+      }
+
+      .stats-label {
+        font-size: 12px;
+        font-weight: 500;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: var(--ink);
+        opacity: 0.55;
+      }
+
+      .cta-strip {
+        background: var(--ink);
+        padding: 5rem 3rem;
+        text-align: center;
+      }
+
+      .cta-title {
+        font-family: var(--font-display);
+        font-size: 52px;
+        font-weight: 400;
+        color: var(--white);
+        margin-bottom: 1rem;
+      }
+
+      .cta-title em {
+        font-style: italic;
+        color: var(--peach);
+      }
+
+      .cta-sub {
+        font-size: 14px;
+        font-weight: 300;
+        color: var(--white);
+        opacity: 0.6;
+        margin-bottom: 2.5rem;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- NAV -->
+    <nav>
+      <a href="index.html" class="nav-logo">
+        <div class="logo-circle">
+          <img
+            src="images/cc-black-logo-transparent.png"
+            alt="Chars Content Logo"
+          />
+        </div>
+        <span class="nav-brand">Char's Content</span>
+      </a>
+      <button class="menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+        <span class="menu-toggle-bar"></span>
+        <span class="menu-toggle-bar"></span>
+        <span class="menu-toggle-bar"></span>
+      </button>
+      <ul class="nav-links">
+        <li><a href="services.html">Services</a></li>
+        <li><a href="portfolio.html">Portfolio</a></li>
+        <li><a href="testimonials.html" class="active">Testimonials</a></li>
+        <li><a href="products.html">Digital Products</a></li>
+        <li><a href="contact.html" class="nav-cta">Let's Work Together</a></li>
+      </ul>
+    </nav>
+
+    <!-- PAGE HERO -->
+    <section class="page-hero">
+      <p class="section-label">Client Love</p>
+      <h1 class="page-hero-title">
+        Kind words from<br /><em>happy clients</em>
+      </h1>
+      <p class="page-hero-sub">
+        Nothing makes me happier than seeing a brand come to life and hearing
+        how it's impacted my clients' businesses.
+      </p>
+    </section>
+
+    <!-- STATS STRIP -->
+    <!-- <div class="stats-strip">
+      <div>
+        <p class="stats-num">10+</p>
+        <p class="stats-label">Projects Completed</p>
+      </div>
+      <div>
+        <p class="stats-num">100%</p>
+        <p class="stats-label">Client Satisfaction</p>
+      </div>
+      <div>
+        <p class="stats-num">5★</p>
+        <p class="stats-label">Average Rating</p>
+      </div>
+      <div>
+        <p class="stats-num">3+</p>
+        <p class="stats-label">Repeat Clients</p>
+      </div>
+    </div> -->
+
+    <!-- TESTIMONIALS -->
+    <section class="section" style="background: var(--blush)">
+      <p class="section-label">Testimonials</p>
+      <h2 class="section-title">What they're <em>saying</em></h2>
+
+      <div class="testi-grid">
+        <!-- FEATURED -->
+        <div class="testi-card featured">
+          <div>
+            <span class="testi-quote-mark">"</span>
+          </div>
+          <div>
+            <p class="testi-stars">★★★★★</p>
+            <p class="testi-text">
+              I had the pleasure of working with Charlotte for both branding and
+              website design, and I couldn’t be more thrilled with the results.
+              She truly brought my vision to life—far beyond what I could have
+              imagined. Charlotte is incredibly detail-oriented, patient, and
+              attentive, making the entire process seamless and enjoyable. She
+              listened to my ideas, understood my goals, and translated them
+              into a cohesive and visually stunning website that perfectly
+              captures my brand’s essence. I’m beyond satisfied with her work
+              and will definitely continue to rely on Charlotte for future
+              branding and website design needs. Highly recommend!
+            </p>
+            <div class="testi-footer">
+              <div class="testi-avatar">KB</div>
+              <div>
+                <p class="testi-author-name">Kayla Britt</p>
+                <p class="testi-author-role">Fairy Law Mother, Founder</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- <div class="testi-card">
+          <p class="testi-stars">★★★★★</p>
+          <span class="testi-quote-mark">"</span>
+          <p class="testi-text">
+            So easy to work with and so talented. She understood my brand
+            instantly and delivered something even better than I imagined.
+          </p>
+          <div class="testi-footer">
+            <div class="testi-avatar">B</div>
+            <div>
+              <p class="testi-author-name">Client Name</p>
+              <p class="testi-author-role">Creative Entrepreneur</p>
+            </div>
+          </div>
+        </div> -->
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-strip">
+      <h2 class="cta-title">Ready to be my next<br /><em>happy client?</em></h2>
+      <p class="cta-sub">Let's create something you'll love talking about.</p>
+      <a href="contact.html" class="btn-teal">Book a Discovery Call</a>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+      <a href="index.html" class="footer-brand">Char's Content</a>
+      <nav class="footer-nav">
+        <a href="services.html">Services</a>
+        <a href="portfolio.html">Portfolio</a>
+        <a href="products.html">Shop</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <span class="footer-copy"
+        >© 2025 Char's Content LLC. All rights reserved.</span
+      >
+    </footer>
+    <script src="mobile.js" defer></script>
+  </body>
+</html>
