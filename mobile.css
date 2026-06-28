@@ -73,7 +73,6 @@
    TABLET — 1024px and below
    ============================================ */
 @media (max-width: 1024px) {
-
   nav {
     padding: 1rem 2rem;
   }
@@ -152,7 +151,6 @@
    MOBILE — 768px and below
    ============================================ */
 @media (max-width: 768px) {
-
   body {
     font-size: 14px;
   }
@@ -376,6 +374,10 @@
     grid-template-columns: 1fr;
   }
 
+  .testi-text {
+    font-size: 15px;
+  }
+
   .testi-card.featured {
     grid-column: span 1;
     grid-template-columns: 1fr;
@@ -514,7 +516,6 @@
    SMALL MOBILE — 480px and below
    ============================================ */
 @media (max-width: 480px) {
-
   .hero-headline {
     font-size: 32px;
   }
