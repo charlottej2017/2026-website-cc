@@ -142,8 +142,8 @@
               <label class="form-label">Email Address</label>
               <input
                 class="form-input"
-                name="email"
                 type="email"
+                name="email"
                 placeholder="hello@yourbrand.com"
                 required
               />
@@ -153,7 +153,7 @@
               <input
                 class="form-input"
                 type="text"
-                name="bsiness_name"
+                name="business_name"
                 placeholder="Your Brand Co."
               />
             </div>
@@ -172,6 +172,7 @@
             </div>
             <div class="form-field form-full">
               <label class="form-label">Budget Range</label>
+              <input type="hidden" name="budget" id="budget-value" />
               <div class="budget-options">
                 <button
                   type="button"
@@ -277,11 +278,12 @@
     </footer>
 
     <script>
-      function selectBudget(el) {
+      function selectBudget(el, value) {
         document
           .querySelectorAll(".budget-chip")
           .forEach((c) => c.classList.remove("selected"));
         el.classList.add("selected");
+        document.getElementById("budget-value").value = value;
       }
 
       const form = document.querySelector("form");
@@ -302,7 +304,13 @@
           btn.style.background = "var(--teal)";
           btn.style.color = "var(--ink)";
           form.reset();
+          document
+            .querySelectorAll(".budget-chip")
+            .forEach((c) => c.classList.remove("selected"));
+          document.getElementById("budget-value").value = "";
         } else {
+          const data = await response.json();
+          console.error("Formspree error:", data);
           btn.textContent = "Something went wrong — try again";
           btn.style.background = "#c0392b";
           btn.disabled = false;
