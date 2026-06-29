@@ -18,7 +18,11 @@
         <div class="logo-circle"></div>
         <span class="nav-brand">Char's Content</span>
       </a>
-      <button class="menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+      <button
+        class="menu-toggle"
+        aria-label="Toggle navigation menu"
+        aria-expanded="false"
+      >
         <span class="menu-toggle-bar"></span>
         <span class="menu-toggle-bar"></span>
         <span class="menu-toggle-bar"></span>
@@ -69,8 +73,8 @@
             <div class="contact-info-icon">✉</div>
             <div>
               <p class="contact-info-label">Email</p>
-              <a href="mailto:hello@charscontent.com" class="contact-info-value"
-                >hello@charscontent.com</a
+              <a href="mailto:charjcontent@gmail.com" class="contact-info-value"
+                >charjcontent@gmail.com</a
               >
             </div>
           </div>
@@ -93,10 +97,14 @@
         </div>
 
         <div class="contact-socials">
-          <a href="#" class="social-link">ig</a>
-          <a href="#" class="social-link">tw</a>
-          <a href="#" class="social-link">in</a>
-          <a href="#" class="social-link">et</a>
+          <a href="https://www.instagram.com/charscontent_/" class="social-link"
+            >ig</a
+          >
+          <a
+            href="https://www.facebook.com/profile.php?id=61552998167108"
+            class="social-link"
+            >fb</a
+          >
         </div>
       </div>
 
@@ -108,14 +116,15 @@
           to schedule a discovery call.
         </p>
 
-        <form onsubmit="handleSubmit(event)">
+        <form action="https://formspree.io/f/xykqpbbp" method="POST">
           <div class="form-grid">
             <div class="form-field">
               <label class="form-label">First Name</label>
               <input
                 class="form-input"
                 type="text"
-                placeholder="Charlotte"
+                name="first_name"
+                placeholder="Jess"
                 required
               />
             </div>
@@ -124,6 +133,7 @@
               <input
                 class="form-input"
                 type="text"
+                name="last_name"
                 placeholder="Smith"
                 required
               />
@@ -133,6 +143,7 @@
               <input
                 class="form-input"
                 type="email"
+                name="email"
                 placeholder="hello@yourbrand.com"
                 required
               />
@@ -142,12 +153,13 @@
               <input
                 class="form-input"
                 type="text"
+                name="bsiness_name"
                 placeholder="Your Brand Co."
               />
             </div>
             <div class="form-field form-full">
               <label class="form-label">Service Needed</label>
-              <select class="service-select">
+              <select class="service-select" name="service">
                 <option value="" disabled selected>Select a service...</option>
                 <option>Website Design</option>
                 <option>Brand Identity</option>
@@ -195,6 +207,7 @@
               <label class="form-label">Tell Me About Your Project</label>
               <textarea
                 class="form-input"
+                name="message"
                 placeholder="Share your vision, goals, timeline, or anything else I should know..."
                 style="min-height: 140px"
               ></textarea>
@@ -233,7 +246,7 @@
         <div class="faq-item">
           <p class="faq-q">What platforms do you work with?</p>
           <p class="faq-a">
-            I primarily work with Squarespace, Wix, WordPress, and Canva. If
+            I primarily work with Squarespace, Wix, WordPress, and more. If
             you're on a different platform, reach out and we can discuss
             options.
           </p>
@@ -271,14 +284,30 @@
         el.classList.add("selected");
       }
 
-      function handleSubmit(e) {
+      const form = document.querySelector("form");
+      form.addEventListener("submit", async function (e) {
         e.preventDefault();
-        const btn = e.target.querySelector('button[type="submit"]');
-        btn.textContent = "Sent! ✓";
-        btn.style.background = "var(--teal)";
-        btn.style.color = "var(--ink)";
+        const btn = form.querySelector('button[type="submit"]');
+        btn.textContent = "Sending...";
         btn.disabled = true;
-      }
+
+        const response = await fetch(form.action, {
+          method: "POST",
+          body: new FormData(form),
+          headers: { Accept: "application/json" },
+        });
+
+        if (response.ok) {
+          btn.textContent = "Sent! ✓";
+          btn.style.background = "var(--teal)";
+          btn.style.color = "var(--ink)";
+          form.reset();
+        } else {
+          btn.textContent = "Something went wrong — try again";
+          btn.style.background = "#c0392b";
+          btn.disabled = false;
+        }
+      });
     </script>
     <script src="mobile.js" defer></script>
   </body>
