@@ -568,7 +568,7 @@
   }
 
   .testi-card.featured .testi-text {
-    font-size: 17px;
+    font-size: 17px !important;
   }
 
   .pricing-price {
